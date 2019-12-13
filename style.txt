@@ -1,0 +1,63 @@
+
+		input[type="text"]:focus + typeahead-container {
+				position: absolute;
+			display: block;
+			overflow-y: visible;
+			height: auto;
+			visibility: visible;
+			top: 39px;
+			left: 0px;
+		}
+
+		 typeahead-container{
+			width: 100%;
+		}
+
+		 typeahead-container .dropdown-menu{
+			margin: 0px;
+			padding: 0px;
+			max-height: 30vh;
+			width: 100%;
+		}
+
+
+		typeahead-container .dropdown-menu li {
+            border-bottom: 1px solid #ccc;
+        }
+		typeahead-container .dropdown-menu li:last-child {
+			border-bottom: none;
+		}
+
+		typeahead-container .dropdown-menu li a {
+			text-transform: none;
+			color: #1960a7;
+			font-size: 13px;
+			font-family: arial;
+		}
+
+					.selected-medicine li {
+						font-weight: 500;
+    display: inline-block;
+    background: #fff;
+    border: solid #d4c4c4 1px;
+    font-size: 14px;
+    padding: 0px 6px;
+    margin-bottom: 3px;
+					}
+
+
+					typeahead-container .dropdown-menu > .active > a, typeahead-container .dropdown-menu > .active > a:hover, typeahead-container .dropdown-menu > .active > a:focus {
+						color: #4c4646;
+						text-decoration: none;
+						background-color: #e6edf3;
+						outline: 0;
+					}
+
+
+
+
+https://www.npmjs.com/package/ng2-typeahead
+https://github.com/brinkmanjg/ng2-typeahead
+
+https://www.npmjs.com/package/ng2-completer
+https://www.npmjs.com/package/ng2-auto-complete

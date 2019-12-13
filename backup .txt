@@ -1,0 +1,110 @@
+
+
+CREATE Procedure WEB_PROC_TM_GET_CONSENT_FORM
+
+(
+@PRACTICE_CODE BIGINT,
+@PROVIDER_CODE BIGINT,
+@Patient_Account BIGINT
+)
+AS
+BEGIN
+
+--declare @PRACTICE_CODE BIGINT=1011163,
+--@PROVIDER_CODE BIGINT=56512646,
+--@Patient_Account BIGINT=565101
+   IF EXISTS(select top 1 PROVIDER_CODE  from AF_TBL_TELE_PATIENT_CONSENT_FORM where PRACTICE_CODE=@PRACTICE_CODE AND PROVIDER_CODE=@PROVIDER_CODE AND ISNULL(DELETED,1)=0 AND ISNULL(ENABLE_CONSENT_FORM,0)=1  ORDER BY CREATED_DATE DESC)
+     BEGIN
+       SELECT   acf.PATIENT_CONSENT_FORM_ID,acf.PROVIDER_CODE,acf.PATIENT_CONSENT_FORM,acf.PATIENT_CONSENT_FORM_PATH,acf.PRACTICE_CODE,ISNULL(IS_Agree,0) AS IS_Agree
+       FROM AF_TBL_TELE_PATIENT_CONSENT_FORM acf
+       left Join  Web_tbl_tm_Patient_agreement_With_Provider app ON acf.Provider_Code=app.Provider_CODE AND acf.Practice_Code=app.Practice_Code AND  ISNULL(IS_Agree,0)=1 AND app.Patient_Account=@Patient_Account
+       WHERE acf.PRACTICE_CODE=@PRACTICE_CODE AND acf.PROVIDER_CODE=@PROVIDER_CODE AND ISNULL(acf.DELETED,1)=0  ORDER BY acf.CREATED_DATE DESC
+           IF NOT EXISTS(SELECT * FROM Web_tbl_tm_Patient_agreement_With_Provider WHERE PATIENT_ACCOUNT = @PATIENT_ACCOUNT AND Provider_Code = @PROVIDER_CODE AND Practice_Code = @PRACTICE_CODE AND isnull(Deleted,0) =0)
+            BEGIN 
+
+                   DECLARE @CONSENT_AGREE_ID bigint
+
+                 SET @CONSENT_AGREE_ID =  (SELECT MAX(Consent_Agree_ID) FROM Web_tbl_tm_Patient_agreement_With_Provider) 
+                 SELECT @CONSENT_AGREE_ID 
+               IF(@CONSENT_AGREE_ID IS  NULL) 
+                  BEGIN 
+                    SET @CONSENT_AGREE_ID =  1 
+                  END 
+              ELSE 
+                 BEGIN 
+                   SET @CONSENT_AGREE_ID = @CONSENT_AGREE_ID +1 
+                 END 
+
+                 INSERT INTO Web_tbl_tm_Patient_agreement_With_Provider 
+                 ( 
+                   Consent_Agree_ID, 
+                   Patient_Account, 
+                   Provider_Code, 
+                   Practice_Code, 
+                   is_Agree, 
+                   Created_Date, 
+                   Created_By, 
+                   Modified_Date, 
+                   Modified_By, 
+                   Deleted 
+                 ) 
+                 VALUES 
+                 ( 
+                   @CONSENT_AGREE_ID, 
+                   @PATIENT_ACCOUNT, 
+                   @PROVIDER_CODE, 
+                   @PRACTICE_CODE, 
+                   0, 
+                   GETDATE(), 
+                   'TalkMD', 
+                   GETDATE(), 
+                   'TalkMD', 
+                   0 
+                 ) 
+           END 
+	 END
+  ELSE
+     BEGIN
+      Select 0 PATIENT_CONSENT_FORM_ID,0 PROVIDER_CODE,'' PATIENT_CONSENT_FORM,'' PATIENT_CONSENT_FORM_PATH, 0 PRACTICE_CODE,0 AS IS_Agree
+     END
+
+END
+
+
+
+
+
+CREATE PROCEDURE AF_PROC_TM_SEARCH_SINGLE_PROVIDERS --56512646  --'1001015' --'103' --'1001015' ''
+(
+@PROVIDER_CODE VARCHAR(100)
+)
+AS
+
+BEGIN
+
+SELECT 
+	PR.PROVID_FNAME ,PR.PROVID_LNAME ,PR.PROVID_STATE_LICENSE ,PR.PROVIDER_ADDRESS ,PR.PROVIDER_CODE ,
+	PR.SITE_ID ,PR.DATE_OF_BIRTH,PR.EMAIL_ADDRESS ,PP.GENDER ,PR.NPI ,PR.[ADDRESS] ,PR.CITY ,PR.ZIP ,
+	PR.[STATE] ,PR.PROVIDER_TITLE ,PR.PRACTICE_CODE ,SP.[Description] SPECIALIZATION_NAME, PP.ABOUT_ME, PP.PREFERRED_LANGUAGE,
+	 PP.PROFILE_PIC, PP.EducationAndTraining EDUCATION, PP.PREFERRED_LOCATION, PP.APPOINTMENT_CHARGES,ploc.Location_Name,
+	 	 Case
+	   WHEN  pp.Board_certified=1 THEN 'Yes' ELSE 'No'  END Board_certified,
+	 ISNULL(pp.Years_in_Practice,0) Years_in_Practice,ISNULL(pp.State_of_License,'') State_of_License ,ISNULL(pp.Awards,'') Awards
+FROM   PROVIDERS PR
+	   JOIN AF_TBL_PRACTICE_USER AF ON AF.PROVIDER_CODE = PR.PROVIDER_CODE AND ISNULL(AF.IS_ACTIVE,1)=1 AND AF.ROLE_ID IN (544100,544101)
+       JOIN WEB_TBL_TM_PROVIDERPROFILE PP 
+         ON PP.PROVIDER_CODE = PR.PROVIDER_CODE 
+       INNER JOIN TAXONOMY_CODES SP 
+              ON SP.TAXONOMY_CODES = PP.SPECIALIZATION_CODE 
+			 LEFT JOIN Practice_Locations ploc ON PP.PREFERRED_LOCATION=ploc.Location_Code
+		WHERE 
+			ISNULL(PR.DELETED , 0) = 0 AND ISNULL(PR.IS_ACTIVE , 1 ) = 1 AND ISNULL(SP.DELETED , 0)=0 AND PR.PROVIDER_CODE= @PROVIDER_CODE
+END 
+
+
+
+
+
+
+
+

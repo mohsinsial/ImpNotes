@@ -1,0 +1,5 @@
+    <!--For LIVE-->
+    <add name="ConnectionString12" connectionString="server=10.10.30.173;database=MIS_DB;uid=mtbcweb;password=mtbcweb@mtbc;MultipleActiveResultSets=true;Persist Security Info=true;Application Name=talkEHR;" providerName="System.Data.SqlClient" />
+    <add name="ConnectionString173" connectionString="server=10.10.30.173;database=MIS_DB;uid=mtbcweb;password=mtbcweb@mtbc;MultipleActiveResultSets=true;Persist Security Info=true;Application Name=talkEHR;" providerName="System.Data.SqlClient" />
+    <add name="ConnectionString69" connectionString="server=10.10.30.173;database=MIS_DB;uid=talksignalr;password=talk456m;MultipleActiveResultSets=true;Persist Security Info=true;Application Name=talkEHR;" providerName="System.Data.SqlClient" />
+    <add name="WebAPIEntitiesAuthenticate" connectionString="server=10.10.30.173;database=MIS_DB;uid=mtbcweb;password=mtbcweb@mtbc;MultipleActiveResultSets=true;Persist Security Info=true;Application Name=talkEHR;" providerName="System.Data.SqlClient" />

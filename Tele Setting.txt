@@ -1,0 +1,406 @@
+Web_proc_tm_get_single_provider_slots
+WEB_PROC_TM_CREATE_APP
+
+<div class="container bg-white  padding-b30 login-container">
+    <div class="row">
+        <div class="col-md-12">
+                <div class="scroller-width table-responsive margin-b10" >
+                        <table class="table table-theme table-hover table-sort  margin-b0">
+                            <thead class="table-bordered ">
+                                <tr>
+                                    <th rowspan="2" width="3%" class="v-middle">
+                                        <!--@*Enable*@-->
+                                        <div class="custom-control custom-checkbox custom-checkbox-black margin-t10">
+                                                <input type="checkbox" class="custom-control-input" id="1">
+                                                <label class="custom-control-label text-gray" for="1">&nbsp;</label>
+                                            </div>
+                                    </th>
+                                    <th rowspan="2" class="v-middle">Day</th>
+                                    <th colspan="2" width="300px">Office Time</th>
+                                    <th colspan="2" width="300px">Break Time</th>
+                                    <th width="150px" rowspan="2">Duration</th>
+                                </tr>
+                                <tr>
+                                    <th width="180px">Start Time</th>
+                                    <th width="180px">End Time</th>
+                                    <th width="180px">Start Time</th>
+                                    <th width="180px">End Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="center">
+                                            <div class="custom-control custom-checkbox custom-checkbox-black margin-t10">
+                                                    <input type="checkbox" class="custom-control-input" id="1">
+                                                    <label class="custom-control-label text-gray" for="1">&nbsp;</label>
+                                                </div>
+                                    </td>
+                                    <td>Monday</td>
+                                    <td align="center">
+                                        <div class="datetime">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="datetime">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="datetime">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="datetime">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <select  class="form-control">
+                                            <option value=''></option>
+                                            <option value='5'>5 Mins</option>
+                                            <option value='10'>10 Mins</option>
+                                            <option value='15'>15 Mins</option>
+                                            <option value='20'>20 Mins</option>
+                                            <option value='25'>25 Mins</option>
+                                            <option value='30'>30 Mins</option>
+                                            <option value='35'>35 Mins</option>
+                                            <option value='40'>40 Mins</option>
+                                            <option value='45'>45 Mins</option>
+                                            <option value='50'>50 Mins</option>
+                                            <option value='55'>55 Mins</option>
+                                            <option value='60'>60 Mins</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                            <div class="custom-control custom-checkbox custom-checkbox-black margin-t10">
+                                                    <input type="checkbox" class="custom-control-input" id="1">
+                                                    <label class="custom-control-label text-gray" for="1">&nbsp;</label>
+                                                </div>
+                                    </td>
+                                    <td>Tuesday</td>
+                                    <td align="center">
+                                        <div class="datetime" width="">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="datetime" width="">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="datetime" width="">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="datetime" width="">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <select  class="form-control">
+                                            <option value=''></option>
+                                            <option value='5'>5 Mins</option>
+                                            <option value='10'>10 Mins</option>
+                                            <option value='15'>15 Mins</option>
+                                            <option value='20'>20 Mins</option>
+                                            <option value='25'>25 Mins</option>
+                                            <option value='30'>30 Mins</option>
+                                            <option value='35'>35 Mins</option>
+                                            <option value='40'>40 Mins</option>
+                                            <option value='45'>45 Mins</option>
+                                            <option value='50'>50 Mins</option>
+                                            <option value='55'>55 Mins</option>
+                                            <option value='60'>60 Mins</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                            <div class="custom-control custom-checkbox custom-checkbox-black margin-t10">
+                                                    <input type="checkbox" class="custom-control-input" id="1">
+                                                    <label class="custom-control-label text-gray" for="1">&nbsp;</label>
+                                                </div>
+                                    </td>
+                                    <td>Wednesday</td>
+                                    <td align="center">
+                                        <div class="datetime" width="">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="datetime" width="">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="datetime" width="">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="datetime" width="">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <select  class="form-control">
+                                            <option value=''></option>
+                                            <option value='5'>5 Mins</option>
+                                            <option value='10'>10 Mins</option>
+                                            <option value='15'>15 Mins</option>
+                                            <option value='20'>20 Mins</option>
+                                            <option value='25'>25 Mins</option>
+                                            <option value='30'>30 Mins</option>
+                                            <option value='35'>35 Mins</option>
+                                            <option value='40'>40 Mins</option>
+                                            <option value='45'>45 Mins</option>
+                                            <option value='50'>50 Mins</option>
+                                            <option value='55'>55 Mins</option>
+                                            <option value='60'>60 Mins</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                            <div class="custom-control custom-checkbox custom-checkbox-black margin-t10">
+                                                    <input type="checkbox" class="custom-control-input" id="1">
+                                                    <label class="custom-control-label text-gray" for="1">&nbsp;</label>
+                                                </div>
+                                    </td>
+                                    <td>Thursday</td>
+                                    <td align="center">
+                                        <div class="datetime" width="">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="datetime" width="">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="datetime" width="">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="datetime" width="">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <select  class="form-control">
+                                            <option value=''></option>
+                                            <option value='5'>5 Mins</option>
+                                            <option value='10'>10 Mins</option>
+                                            <option value='15'>15 Mins</option>
+                                            <option value='20'>20 Mins</option>
+                                            <option value='25'>25 Mins</option>
+                                            <option value='30'>30 Mins</option>
+                                            <option value='35'>35 Mins</option>
+                                            <option value='40'>40 Mins</option>
+                                            <option value='45'>45 Mins</option>
+                                            <option value='50'>50 Mins</option>
+                                            <option value='55'>55 Mins</option>
+                                            <option value='60'>60 Mins</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                            <div class="custom-control custom-checkbox custom-checkbox-black margin-t10">
+                                                    <input type="checkbox" class="custom-control-input" id="1">
+                                                    <label class="custom-control-label text-gray" for="1">&nbsp;</label>
+                                                </div>
+                                    </td>
+                                    <td>Friday</td>
+                                    <td align="center">
+                                        <div class="datetime" width="">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="datetime" width="">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="datetime" width="">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="datetime" width="">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <select  class="form-control">
+                                            <option value=''></option>
+                                            <option value='5'>5 Mins</option>
+                                            <option value='10'>10 Mins</option>
+                                            <option value='15'>15 Mins</option>
+                                            <option value='20'>20 Mins</option>
+                                            <option value='25'>25 Mins</option>
+                                            <option value='30'>30 Mins</option>
+                                            <option value='35'>35 Mins</option>
+                                            <option value='40'>40 Mins</option>
+                                            <option value='45'>45 Mins</option>
+                                            <option value='50'>50 Mins</option>
+                                            <option value='55'>55 Mins</option>
+                                            <option value='60'>60 Mins</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                            <div class="custom-control custom-checkbox custom-checkbox-black margin-t10">
+                                                    <input type="checkbox" class="custom-control-input" id="1">
+                                                    <label class="custom-control-label text-gray" for="1">&nbsp;</label>
+                                                </div>
+                                    </td>
+                                    <td>Saturday</td>
+                                    <td align="center">
+                                        <div  width="">
+                                            <datetime [timepicker]="timepickerOptions" [datepicker]="false" class="form-control"></datetime>
+                                        </div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="datetime" width="">
+                                            <datetime [timepicker]="{ 'showMeridian': true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="datetime" width="135px">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false"></datetime>
+                                        </div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="datetime" width="">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <select  class="form-control">
+                                            <option value=''></option>
+                                            <option value='5'>5 Mins</option>
+                                            <option value='10'>10 Mins</option>
+                                            <option value='15'>15 Mins</option>
+                                            <option value='20'>20 Mins</option>
+                                            <option value='25'>25 Mins</option>
+                                            <option value='30'>30 Mins</option>
+                                            <option value='35'>35 Mins</option>
+                                            <option value='40'>40 Mins</option>
+                                            <option value='45'>45 Mins</option>
+                                            <option value='50'>50 Mins</option>
+                                            <option value='55'>55 Mins</option>
+                                            <option value='60'>60 Mins</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                            <div class="custom-control custom-checkbox custom-checkbox-black margin-t10">
+                                                    <input type="checkbox" class="custom-control-input" id="1">
+                                                    <label class="custom-control-label text-gray" for="1">&nbsp;</label>
+                                                </div>
+                                    </td>
+                                    <td>Sunday</td>
+                                    <td align="center">
+                                        <div class="datetime" width="">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="datetime" width="">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false" ></datetime>
+                                        </div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="datetime" width="">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false"></datetime>
+                                        </div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="datetime" width="">
+                                            <datetime [timepicker]="{ showMeridian: true }" [datepicker]="false"></datetime>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <select  class="form-control">
+                                            <option value=''></option>
+                                            <option value='5'>5 Mins</option>
+                                            <option value='10'>10 Mins</option>
+                                            <option value='15'>15 Mins</option>
+                                            <option value='20'>20 Mins</option>
+                                            <option value='25'>25 Mins</option>
+                                            <option value='30'>30 Mins</option>
+                                            <option value='35'>35 Mins</option>
+                                            <option value='40'>40 Mins</option>
+                                            <option value='45'>45 Mins</option>
+                                            <option value='50'>50 Mins</option>
+                                            <option value='55'>55 Mins</option>
+                                            <option value='60'>60 Mins</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center"></td>
+                                    <td></td>
+                                    <td align="center"></td>
+                                    <td align="center"></td>
+                                    <td align="center"></td>
+                                    <td align="center"></td>
+                                    <td class="text-right">
+                                        <button class="btn btn-info" (click)="AddUpdateTime()">Save / Update</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                      </div>
+        </div>
+    </div>
+</div>
+<style>
+
+        th{
+            background: #8fabbf;
+        color: #fff !important;
+        font-weight: normal !important;
+        border-right: 1px solid #fff !important;
+        text-align: center;
+        font-weight: bold;
+        line-height: normal !important;
+        height: 26px !important;
+        }
+     
+    .bootstrap-timepicker .input-group-addon i {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        color: #1960a7 !important;
+    }
+    </style>
+
+<!-- 
+.input-group-addon {
+    padding: 6px 12px !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    line-height: 1 !important;
+    color: #435c80;
+    text-align: center !important;
+    /* background-color: #fff; */
+    border-bottom: 1px solid #adadad !important;
+    border-radius: 0 !important;
+    border: none !important;
+}
+.input-group-addon i, datetime .input-group .input-group-addon span {
+    color: #1960a7 !important;
+} -->

@@ -1,0 +1,52 @@
+hideLoader = true;
+UserName: string;
+login: Userlogin;
+userLockoutTime: number;
+emergencyMode: boolean;
+lastPingTime: Date = null;
+currentTime: Date = null;
+unLockRes: boolean;
+emptyPassword: boolean;
+isLocked: boolean;
+@ViewChild('password') password;
+ isSwitchUser: boolean;
+ switchUser: SwitchUser;
+objPATokenReponse: PATokenReponse;
+
+
+
+
+
+Constructor(){
+        this.currentTime = new Date();
+        var MS_PER_MINUTE = 60000;
+        this.lastPingTime = new Date(this.currentTime.getTime() - 5 * MS_PER_MINUTE);
+        this.login = new Userlogin();
+        this.emergencyMode = false;
+        this.unLockRes = true;
+        this.emptyPassword = false;
+        this.isLocked = false;
+        this.isSwitchUser = false;
+       this.switchUser = new SwitchUser();
+       this.objPATokenReponse = new PATokenReponse()
+               _router.events.subscribe(event => {
+            if (event instanceof NavigationStart) {
+                if (!this.hideLoader) {
+                    setTimeout(() => { $("#spinnerLoader").show(); }, 0);
+                }
+            }
+        });
+        _router.events.subscribe(event => {
+            if (event instanceof NavigationEnd) {
+                $("#spinnerLoader").hide();
+                setTimeout(() => { $("#spinnerLoader").hide(); }, 0);
+                self._singletonService.StartTimerCssLoader();
+            }
+        });
+        _router.events.subscribe(event => {
+            if (event instanceof RoutesRecognized) {
+                self._singletonService.ResetCssLoader();
+            }
+        });
+
+}
